@@ -1,0 +1,60 @@
+For datasets with dark and lasers:
+
+1.Dump dark_01 dataset to LaueUtil. In the processed /dark_01 folder,  run xtals with -d. Make sure .inp file has correct paths.
+
+cd /media/sf_shared/Au2Ag2/processing/Au2Ag2/Au2Ag2_04/dark_01
+/home/piotr/Desktop/xtal/xtal/dist/Debug/GNU-Linux/xtals -r dark_01.inp -d
+
+It should create dark_01__expt.h5
+
+2.Create monofile. Do this only once per compound directory: create a mono file using .fcf
+
+cd /media/sf_shared/Au2Ag2/processing/Au2Ag2/
+lu_fcf2mono -o mono.h5 2019_03_17_rk_Au2Ag2RoeskyClO4_98K_01.fcf
+
+It should create mono.h5. Edit it and Remove any (n) at the end of values of 6 unit parameters (e.g. 10.7483(3)->10.7483)
+
+3.Match pairs. With the GUI:
+
+cd /media/sf_shared/Au2Ag2/processing/Au2Ag2/Au2Ag2_04/dark_01
+lu__match_pairs dark_01__expt.h5 ../../mono.h5 
+
+Then adjust intensity threshold in ExptClusterManager by changing the values and then activating Terminal window. Aim for about 100+ peaks. Change the link cutoff to 0.005. The Program might spit out some errors. Press Calculate. Press Cluster. Save the file to xxx.h5
+
+4.Dump laser_01 dataset to LaueUtil.In the processed /laser_01 folder,  run xtals with -d. Make sure .inp file has correct paths.
+
+cd /media/sf_shared/Au2Ag2/processing/Au2Ag2/Au2Ag2_04/laser_01
+/home/piotr/Desktop/xtal/xtal/dist/Debug/GNU-Linux/xtals -r laser_01.inp -d
+
+It should create laser_01__expt.h5
+
+5.Refine orientation matrices. Do it from the laser_01 folder. The order of files is:
+i.dumped to laue laser file
+ii. mono file
+iii. plot file
+iv. dark matched pair (xxx) file
+
+cd /media/sf_shared/Au2Ag2/processing/Au2Ag2/Au2Ag2_04/laser_01
+lu__refine_orientmatrix laser_01__expt.h5 ../../mono.h5 ../../14IDB_18585.mda.0001 ../dark_01/xxx.h5 
+
+The nb pairs should be >10 for decent frames.
+Save the file to: laser_01__expt_rot.h5
+
+6.Assign hkl indices. Do it from laser_01 catalog. Order of files in the command:
+i.dumped to laue laser file
+ii. mono file
+iii. plot file
+iv. refined matrices file (from step 5.)
+
+cd /media/sf_shared/Au2Ag2/processing/Au2Ag2/Au2Ag2_04/laser_01
+lu__hkl_assign_monolc laser_01__expt.h5 ../../mono.h5 ../../14IDB_18585.mda.0001 laser_01__expt_rot.h5
+
+Change to FrameRotation and Calculate.
+Save to laser_01__assign.h5
+
+7.Process to ratio .hkl file. From the laser_01 catalog:
+
+lu_indexing2ratios -r laser_01__ratios.h5 -R laser_01__ratios.txt -o laser_01__ratios.hkl -n 5 -s 0.5 yyy.h5
+
+Where -n 5 represents the number of PAIRS of frames on/off.
+

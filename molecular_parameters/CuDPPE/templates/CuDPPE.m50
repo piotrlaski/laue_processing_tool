@@ -1,0 +1,152 @@
+Version Jana2006
+title
+cell 20.2099 13.674 26.5809 90 95.5178 90
+esdcell 0.0004 0.0003 0.0005 0 0.0002 0
+spgroup P21/c 14 22
+lattice P
+symmetry x y z
+symmetry -x y+1/2 -z+1/2
+symmetry -x -y -z
+symmetry x -y+1/2 z+1/2
+unitsnumb 8
+chemform C40 H36 Cu F6 N2 P3
+formtab -9
+atom C atradius 0.77 color 128073041
+atom H atradius 0.46 color 255204204
+atom Cu atradius 1.28 color 34071220
+atom F atradius 0.72 color 176185230
+atom N atradius 0.74 color 176185230
+atom P atradius 1.1 color 192156194
+roundmethod 1
+end
+*******************************************************************************
+contour
+end contour
+dist
+end dist
+fourier
+  addbord 0 maptype 6 positive 50 negative 5
+end fourier
+refine
+  cycles 100
+  keep hydro triang C2 2 1 C3 C1 0.96 H1c2
+  keep ADP riding C2 1.2 H1c2
+  keep hydro triang C2a 2 1 C3a C1a 0.96 H1c2a
+  keep ADP riding C2a 1.2 H1c2a
+  keep hydro triang C3 2 1 C2 C4 0.96 H1c3
+  keep ADP riding C3 1.2 H1c3
+  keep hydro triang C3a 2 1 C2a C4a 0.96 H1c3a
+  keep ADP riding C3a 1.2 H1c3a
+  keep hydro triang C5 2 1 C6 C4 0.96 H1c5
+  keep ADP riding C5 1.2 H1c5
+  keep hydro triang C5a 2 1 C6a C4a 0.96 H1c5a
+  keep ADP riding C5a 1.2 H1c5a
+  keep hydro triang C6 2 1 C5 C7 0.96 H1c6
+  keep ADP riding C6 1.2 H1c6
+  keep hydro triang C6a 2 1 C5a C7a 0.96 H1c6a
+  keep ADP riding C6a 1.2 H1c6a
+  keep hydro triang C8 2 1 C9 C7 0.96 H1c8
+  keep ADP riding C8 1.2 H1c8
+  keep hydro triang C8a 2 1 C9a C7a 0.96 H1c8a
+  keep ADP riding C8a 1.2 H1c8a
+  keep hydro triang C9 2 1 C8 C10 0.96 H1c9
+  keep ADP riding C9 1.2 H1c9
+  keep hydro triang C9a 2 1 C8a C10a 0.96 H1c9a
+  keep ADP riding C9a 1.2 H1c9a
+  keep hydro triang C24 2 1 C23 C25 0.96 H1c24
+  keep ADP riding C24 1.2 H1c24
+  keep hydro triang C24a 2 1 C25a C23a 0.96 H1c24a
+  keep ADP riding C24a 1.2 H1c24a
+  keep hydro triang C25 2 1 C26 C24 0.96 H1c25
+  keep ADP riding C25 1.2 H1c25
+  keep hydro triang C25a 2 1 C26a C24a 0.96 H1c25a
+  keep ADP riding C25a 1.2 H1c25a
+  keep hydro triang C26 2 1 C25 C27 0.96 H1c26
+  keep ADP riding C26 1.2 H1c26
+  keep hydro triang C26a 2 1 C25a C27a 0.96 H1c26a
+  keep ADP riding C26a 1.2 H1c26a
+  keep hydro triang C27 2 1 C28 C26 0.96 H1c27
+  keep ADP riding C27 1.2 H1c27
+  keep hydro triang C27a 2 1 C26a C28a 0.96 H1c27a
+  keep ADP riding C27a 1.2 H1c27a
+  keep hydro triang C30 2 1 C31 C29 0.96 H1c30
+  keep ADP riding C30 1.2 H1c30
+  keep hydro triang C30a 2 1 C31a C29a 0.96 H1c30a
+  keep ADP riding C30a 1.2 H1c30a
+  keep hydro triang C31 2 1 C30 C32 0.96 H1c31
+  keep ADP riding C31 1.2 H1c31
+  keep hydro triang C31a 2 1 C32a C30a 0.96 H1c31a
+  keep ADP riding C31a 1.2 H1c31a
+  keep hydro triang C32 2 1 C33 C31 0.96 H1c32
+  keep ADP riding C32 1.2 H1c32
+  keep hydro triang C32a 2 1 C33a C31a 0.96 H1c32a
+  keep ADP riding C32a 1.2 H1c32a
+  keep hydro triang C33 2 1 C32 C34 0.96 H1c33
+  keep ADP riding C33 1.2 H1c33
+  keep hydro triang C33a 2 1 C32a C34a 0.96 H1c33a
+  keep ADP riding C33a 1.2 H1c33a
+  keep hydro triang C34 2 1 C29 C33 0.96 H1c34
+  keep ADP riding C34 1.2 H1c34
+  keep hydro triang C34a 2 1 C33a C29a 0.96 H1c34a
+  keep ADP riding C34a 1.2 H1c34a
+  keep hydro triang C36 2 1 C37 C35 0.96 H1c36
+  keep ADP riding C36 1.2 H1c36
+  keep hydro triang C36a 2 1 C37a C35a 0.96 H1c36a
+  keep ADP riding C36a 1.2 H1c36a
+  keep hydro triang C37 2 1 C38 C36 0.96 H1c37
+  keep ADP riding C37 1.2 H1c37
+  keep hydro triang C37a 2 1 C38a C36a 0.96 H1c37a
+  keep ADP riding C37a 1.2 H1c37a
+  keep hydro triang C38 2 1 C37 C39 0.96 H1c38
+  keep ADP riding C38 1.2 H1c38
+  keep hydro triang C38a 2 1 C39a C37a 0.96 H1c38a
+  keep ADP riding C38a 1.2 H1c38a
+  keep hydro triang C39 2 1 C40 C38 0.96 H1c39
+  keep ADP riding C39 1.2 H1c39
+  keep hydro triang C39a 2 1 C38a C40a 0.96 H1c39a
+  keep ADP riding C39a 1.2 H1c39a
+  keep hydro triang C40 2 1 C39 C35 0.96 H1c40
+  keep ADP riding C40 1.2 H1c40
+  keep hydro triang C40a 2 1 C39a C35a 0.96 H1c40a
+  keep ADP riding C40a 1.2 H1c40a
+  keep hydro tetrahed C15 2 2 C16 P1 0.96 H1c15 H2c15
+  keep ADP riding C15 1.2 H1c15 H2c15
+  keep hydro tetrahed C15a 2 2 C16a P3 0.96 H1c15a H2c15a
+  keep ADP riding C15a 1.2 H1c15a H2c15a
+  keep hydro tetrahed C16 2 2 C15 P2 0.96 H1c16 H2c16
+  keep ADP riding C16 1.2 H1c16 H2c16
+  keep hydro tetrahed C16a 2 2 C15a P4 0.96 H1c16a H2c16a
+  keep ADP riding C16a 1.2 H1c16a H2c16a
+  keep hydro tetrahed C13 1 3 C1 0.96 H1c13 H2c13 H3c13
+  keep ADP riding C13 1.2 H1c13 H2c13 H3c13
+  keep hydro tetrahed C13a 1 3 C1a 0.96 H1c13a H2c13a H3c13a
+  keep ADP riding C13a 1.2 H1c13a H2c13a H3c13a
+  keep hydro tetrahed C14 1 3 C10 0.96 H1c14 H2c14 H3c14
+  keep ADP riding C14 1.2 H1c14 H2c14 H3c14
+  keep hydro tetrahed C14a 1 3 C10a 0.96 H1c14a H2c14a H3c14a
+  keep ADP riding C14a 1.2 H1c14a H2c14a H3c14a
+  keep hydro triang C18 2 1 C19 C17 0.96 H1c18
+  keep ADP riding C18 1.2 H1c18
+  keep hydro triang C18a 2 1 C19a C17a 0.96 H1c18a
+  keep ADP riding C18a 1.2 H1c18a
+  keep hydro triang C19 2 1 C18 C20 0.96 H1c19
+  keep ADP riding C19 1.2 H1c19
+  keep hydro triang C19a 2 1 C20a C18a 0.96 H1c19a
+  keep ADP riding C19a 1.2 H1c19a
+  keep hydro triang C20 2 1 C21 C19 0.96 H1c20
+  keep ADP riding C20 1.2 H1c20
+  keep hydro triang C20a 2 1 C19a C21a 0.96 H1c20a
+  keep ADP riding C20a 1.2 H1c20a
+  keep hydro triang C21 2 1 C20 C22 0.96 H1c21
+  keep ADP riding C21 1.2 H1c21
+  keep hydro triang C21a 2 1 C20a C22a 0.96 H1c21a
+  keep ADP riding C21a 1.2 H1c21a
+  keep hydro triang C22 2 1 C21 C17 0.96 H1c22
+  keep ADP riding C22 1.2 H1c22
+  keep hydro triang C22a 2 1 C21a C17a 0.96 H1c22a
+  keep ADP riding C22a 1.2 H1c22a
+  keep hydro triang C28 2 1 C27 C23 0.96 H1c28
+  keep ADP riding C28 1.2 H1c28
+  keep hydro triang C28a 2 1 C23a C27a 0.96 H1c28a
+  keep ADP riding C28a 1.2 H1c28a
+end refine

@@ -1,0 +1,28 @@
+C:/Users/glupo/fourier/Ag2Cu2S4_05_laser_01_final/2019_04_08_rk_JDrR016AgCuSK2_100K_01_00.par
+FOUR
+C:/Users/piotr/Desktop/PhotodifferenceMaps/SCRIPTS/fourier/Ag2Cu2S4_05_laser_01_final/Ag2Cu2S4_05_laser_01_final.four
+FOUR
+Y
+S
+0 2
+T
+1.0 1.0
+S
+PL
+55501
+XY
+Au2 1
+55501
+Au1 1
+55501
+P1 1
+55501
+-2 5
+-3 3
+1
+0
+0.05
+grid
+plot1.ps
+N
+END

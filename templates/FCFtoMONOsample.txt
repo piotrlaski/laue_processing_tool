@@ -1,0 +1,10 @@
+lu_fcf2mono -o CuBatho_mono.h5 -e '[(h,k,l), (-h,-k,-l),(h,-k,l), (-h,k,-l)]' CuBatho.fcf
+lu_fcf2mono -o CuDPPE_mono.h5 -e '[(h,k,l), (-h,-k,-l),(h,-k,l), (-h,k,-l)]' CuDPPE.fcf
+
+home/piotr/laueutil/epd-7.0-1-rh5-x86_64/bin/ipython -wthread /home/piotr/laueutil/laueutil-code/laue_util/bin/lu_fcf2mono.py -o anc_CuDPPE_ono.h5 -e '[(h,k,l), (-h,-k,-l),(h,-k,l), (-h,k,-l)]' anc_CuDPPE.fcf
+
+/home/piotr/Desktop/laueutil/epd-7.0-1-rh5-x86_64/bin/ipython -wthread /home/piotr/Desktop/laueutil/laueutil-code/laue_util/bin/lu_fcf2mono.py -- -o mono.h5 -e '[(h,k,l), (h,k,-l), (h,-k,l), (h,-k,-l), (-h,k,l), (-h,k,-l), (-h,-k,l), (-h,-k,-l)]' snp_200K.fcf
+
+the '[(h,k,l)]' 
+
+make sure that line 268 is pointing to your lu_fcf2mono location! (__file__ error might sometimes occur and crash the program prematurely despite producing a .mono file)

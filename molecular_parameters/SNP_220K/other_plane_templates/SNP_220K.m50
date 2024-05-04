@@ -1,0 +1,34 @@
+Version Jana2006
+title  str_a.res in pnnm
+cell 6.1791 11.877 15.5496 90 90 90
+esdcell 0 0 0 0 0 0
+spgroup Pnnm 58 3
+lattice P
+symmetry x y z
+symmetry -x -y z
+symmetry -x+1/2 y+1/2 -z+1/2
+symmetry x+1/2 -y+1/2 -z+1/2
+symmetry -x -y -z
+symmetry x y -z
+symmetry x+1/2 -y+1/2 z+1/2
+symmetry -x+1/2 y+1/2 z+1/2
+unitsnumb 8
+atlist C2.5 H2 Fe0.5 N3 Na O1.5
+formtab -62
+atom C atradius 0.77 color 128073041
+atom H atradius 0.46 color 255204204
+atom Fe atradius 1.26 color 181113000
+atom N atradius 0.74 color 176185230
+atom Na atradius 1.91 color 249220060
+atom O atradius 0.74 color 254003000
+roundmethod 1
+end
+*******************************************************************************
+contour
+end contour
+dist
+end dist
+fourier
+end fourier
+refine
+end refine

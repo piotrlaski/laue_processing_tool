@@ -1,0 +1,289 @@
+/* 
+ *
+ *  LAUEPROC CONFIG FILE
+ *
+ *  25/01/2022
+ *
+ */
+
+input_data =
+{
+	/* path to the directory with images */
+	images_directory = "/PATH_INPUT/";
+
+	/* path to the log file */
+	log_file_path = "/PATH_LOG";
+
+// --->
+// ---> This needs to be implemented, but maybe change it to the integration part. We export whole data set
+// ---> but reject images during the integration and subsequent step.
+// --->
+	/* images to be skipped */
+	images_to_skip = ""; // NOT USED (yet)
+
+	/* data source: APS, ESRF, SFRM */
+	data_source = "APS";
+	
+// --->
+// ---> Here is new entry for different data sets
+// --->
+	/* data type: dark - no laser, laser_ON - all with laser, */
+	/* laser_ON_OFF or laser_OFF_ON - pump/probe experiments */
+	data_type = "dark";
+	
+// --->
+// ---> This is new to read from LU results after hkl assignment.
+// --->
+	/* name of input LaueUtil "assigned" HDF5 file */
+	lu_input_assigned_dataset_name = "dataset__LU_assign_in.h5";
+};
+
+output_data =
+{
+	/* directory for temporary and output data */
+	output_directory = "/PATH_OUTPUT/";
+	
+	/* name of output HDF5 file with images and log dataset */
+	images_dataset_name = "NAME_LOOK__frm.h5";
+	
+	/* name of output HDF5 file with signal dataset */
+	signal_dataset_name	= "NAME_LOOK__sig.h5";
+
+	/* name of output HDF5 file with integrated dataset */
+	integrated_dataset_name	= "NAME_LOOK__int.h5";
+
+	/* name of output HDF5 file with simulated dataset */
+	simulated_dataset_name	= "NAME_LOOK__sim.h5";
+
+// --->
+// ---> This to be added in the future.
+// --->
+// ---> /* name of output HDF5 file with geometry dataset */
+// ---> geometry_dataset_name = "dataset__geo.h5";
+// --->
+
+// --->
+// ---> This to be added in the future.
+// --->
+// ---> /* name of output HDF5 file with calculated intensity ratios */
+// ---> geometry_dataset_name = "dataset__rat.h5";
+// --->
+// ---> /* name of output text file with calculated intensity ratios */
+// ---> geometry_dataset_name = "dataset__txt.h5";
+// --->
+// ---> /* name of output hkl-style file with calculated intensity ratios */
+// ---> geometry_dataset_name = "dataset__hkl.h5";
+// --->
+
+// --->
+// ---> Here is change of variable name.
+// --->
+	/* name of output LaueUtil "expt" HDF5 dump file */
+	lu_output_expt_dataset_name = "NAME_LOOK__expt.h5";
+};
+
+integration =
+{
+	/* method: SS = seed-skewness method, KW - Kruskal-Wallis test, CF - constant-fraction method */
+	integration_method = "SS";
+
+	/* seed-skewness method parameters */
+
+		/* Adjustment of vector length in consecutive cycles of skewness minimization [bool: TRUE/FALSE] */
+    	vector_length_adjustment = FALSE; 
+	
+		/* parameter used for the initial test of peak presence: |mu_3| > trust_level * std(mu_3), [double] */
+		trust_level = 2.0;
+
+		/* parameter used for signal detection:	data[i] > ( <BG> + signal_level * std(BG) ), [double], <BG> = median */ 
+		signal_level = 3.0;
+
+	/* Kruskal-Wallis-test parameters */
+	
+		/* statistical significance level */
+		alpha = 0.05;
+
+		/* cuf-off level for peak definition */
+		cutoff_level = 3.0;
+
+// --->
+// ---> This below to be added only for KW test
+// --->
+		/* Block length */
+		kw_block_length = 20; // NOT USED (yet)
+
+	/* image rejected area [pix: unsigned integer], if empty then use (); only; {} must be separated by commas */
+	rejected_rectangles	= ( { x_0 = 1925; y_0 = 1964; x_end = 1964; y_end = 2000; }, { x_0 = 0; y_0 = 1947; x_end = 1953; y_end = 1986; });
+	rejected_general_rectangles = ();
+	rejected_discs = ({ x_0 = 1970; y_0 = 1970; R = 50; });
+	rejected_discs_complement = ();
+	rejected_border = 2;
+
+	/* remove spots whitch are connected with rejected area or are partialy intersected with rejected area. [bool: TRUE/FALSE] */
+	remove_intersected = FALSE;
+
+	/* minimal amount of pixels in spot [UNIT: pix, DATA TYPE: unsigned integer]*/
+	min_amount_of_pixels = 2;
+
+	/* morphological operations (from left to right, only small characters) [string] */
+	// p - remove single Pixels
+	// e - Erosion
+	// d - Dilation
+	// h - remove 1-pixel Holes
+	morphological_operations = "peepdddh";
+		
+	/* intensity weighted centers [bool: TRUE/FALSE] */
+	intensity_weighted_centers = TRUE;
+
+	/* bitmask sum inside block [bool: TRUE/FALSE] */
+	sum_of_bitmasks = FALSE;
+
+// --->
+// ---> Remove from KW procedure (see above)
+// --->
+	/* Number of bitmask to add [DATA TYPE: unsigned integer]*/
+	amount_in_block = 20;
+
+// --->
+// ---> Add these new options in the future
+// --->
+	/* primary beam normalisation */
+	primary_beam_normalisation = FALSE; // NOT USED (yet)
+	/* background correction and recomputation */
+	background_correction = FALSE; // NOT USED (yet)
+
+	/* number of pixels used to print exact output data in the signal searching algorithm */
+	verbose_pixel_grid = FALSE; // only in the seed skewness method
+	verbose_pixel_size_n_x = 5; // n_x vertical
+	verbose_pixel_size_n_y = 5; // n_y horizontal
+	verbose_selected_pixel = ({ x = 1858; y = 456; });
+
+	/* output mask format: PNG or BMP [string] */
+	save_bitmasks_as = "PNG"
+};
+
+geometry =
+{
+	/* distance form crystal to detector [UNIT: mm, DATA TYPE: double] */
+	detector_distance = 100.0;
+
+// --->
+// ---> These names below change from "x" and "y" to "i" and "j".
+// ---> "i" is horizontal (left-to-right), "j" is  vertical (top-to-bottom).
+// --->
+	/* position of beam center on detector [UNIT: pix, DATA TYPE: double] */
+	beam_center_x = 1987.0;  
+	beam_center_y = 1972.0;
+
+// --->
+// ---> These names below change from "x" and "y" to "h" and "v" (horizontal and vertical; check which is which).
+// --->
+	/* size of detectors pixel [UNIT: mm, DATA TYPE: double] */
+	pixel_size_x = 0.0886;
+	pixel_size_y = 0.0886;
+
+// --->
+// ---> To be added. This is read in only in case this information
+// ---> is absent in frame headers.
+// --->
+// ---> /* detector size in pixels */
+// ---> det_size_h = 1024; // NOT USED (yet)
+// ---> det_size_v = 1024; // NOT USED (yet)
+// --->
+
+	/* constant goniometer angles [UNIT: degrees, DATA TYPE: double] */
+	alpha_angle = 90.0;
+	beta_angle = 60.0;
+	omega_angle = 0.0;
+	kappa_angle = 0.0;
+
+// --->
+// ---> Here change the names "x" and "y" accordingly (see above).
+// --->
+	/* instrument model refinement parameters */
+	detector_distance_initial = 50.0;
+	beam_center_x_initial = 1000.38;
+	beam_center_y_initial = 1025.40;
+	iter_max = 100;
+	damping_factor = 0.5;
+	intensity_cutoff = 50.0;
+	matching_angle = 0.1;
+	convergence_criteria = 0.5;
+	recalculate_pairs = TRUE
+};
+
+ratios =
+{
+	
+// --->
+// ---> Here new commands on how to compute ratios
+// --->
+// ---> /* ratio cutoff */
+// ---> ratio_cutoff = 0.5; // NOT USED (yet)
+// --->
+};
+
+simulation = 
+{
+	/* XRAY */
+	/* Xray beam parameters: [UNIT: A, DATA TYPE: double*/
+	sim_lambda_min = 0.8;
+	sim_lambda_max = 1.0;
+	sim_sinthl_max = 0.6;
+
+	/* CRYSTAL */
+	/* Crystall cell dimsensions [UNIT: A, DATA TYPE: double]*/
+	sim_a = 10.0;
+	sim_b = 10.0;
+	sim_c = 10.0;
+	/* Crystall cell angles [UNIT: deg, DATA TYPE: double]*/
+	sim_alpha = 90.0;
+	sim_beta = 90.0;
+	sim_gamma = 90.0;
+
+	/* DETECTOR */
+	/* Distance form crystal to detector [UNIT: mm, DATA TYPE: double] */
+	sim_detector_distance = 100.0;
+	sim_detector_width = 3840;
+	sim_detector_height = 3840;
+
+	/* Size of detectors pixel [UNIT: mm, DATA TYPE: double] */
+	sim_pixel_size_x = 0.0792;
+	sim_pixel_size_y = 0.0792;
+
+
+	/* Position of beam center on detector [UNIT: pix, double] */
+	sim_beam_center_x = 1024;
+	sim_beam_center_y = 1024;
+
+	/* GONIOMETER */
+	/* Running angle [VALUE: phi, chi, psi, DATA TYPE: string ]*/
+	sim_running_angle = "phi";
+
+	/* Running angle parameters [UNIT: degrees, DATA TYPE: double] */
+	sim_angle_start = 0.0;
+	sim_angle_stop = 90.0;
+	sim_angle_step = 01.0;
+
+	/* Constant goniometer angles [UNIT: degrees, DATA TYPE: double] */
+	sim_omega_angle = 0.0;
+	sim_chi_angle = -90.0;
+	sim_phi_angle = 0.0;
+
+	/* Orientation matrix angles [UNIT: degrees, DATA TYPE: double] */
+	sim_u_omega_angle = 0.0;
+	sim_u_chi_angle = 0.0;
+	sim_u_phi_angle = 0.0;
+
+	/* Output images flag [bool: TRUE/FALSE]  */
+	sim_export_images = TRUE;
+};
+
+machine =
+{
+	/* maximum host RAM space for processing data [UNIT: MB, DATA TYPE: unsigned integer] */
+	max_host_memory = 2048;
+
+	/* maximum device RAM space for processing data [UNIT: MB, DATA TYPE: unsigned integer] */
+	max_device_memory = 2048; // NOT USED (yet)
+};

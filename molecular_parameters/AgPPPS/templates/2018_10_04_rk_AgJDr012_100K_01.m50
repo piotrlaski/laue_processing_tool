@@ -1,0 +1,104 @@
+Version Jana2006
+title
+cell 10.8455 12.0698 15.9133 72.271 88.798 81.388
+esdcell 0.0005 0.0005 0.0005 0.003 0.003 0.003
+spgroup P-1 2 1
+lattice P
+symmetry x y z
+symmetry -x -y -z
+unitsnumb 2
+chemform C48 H38 P3 S Ag
+formtab -9
+atom C atradius 0.77 color 128073041
+atom H atradius 0.46 color 255204204
+atom P atradius 1.1 color 192156194
+atom S atradius 1.04 color 255250000
+atom Ag atradius 1.44 color 183187189
+roundmethod 1
+end
+*******************************************************************************
+contour
+end contour
+dist
+end dist
+fourier
+end fourier
+refine
+  cycles 100 fsquare 1
+  keep hydro triang C3 2 1 C4 C2 0.96 H3
+  keep ADP riding C3 1.2 H3
+  keep hydro triang C4 2 1 C3 C5 0.96 H4
+  keep ADP riding C4 1.2 H4
+  keep hydro triang C5 2 1 C6 C4 0.96 H5
+  keep ADP riding C5 1.2 H5
+  keep hydro triang C6 2 1 C5 C1 0.96 H6
+  keep ADP riding C6 1.2 H6
+  keep hydro triang C8 2 1 C7 C9 0.96 H8
+  keep ADP riding C8 1.2 H8
+  keep hydro triang C9 2 1 C10 C8 0.96 H9
+  keep ADP riding C9 1.2 H9
+  keep hydro triang C10 2 1 C9 C11 0.96 H10
+  keep ADP riding C10 1.2 H10
+  keep hydro triang C11 2 1 C10 C12 0.96 H11
+  keep ADP riding C11 1.2 H11
+  keep hydro triang C12 2 1 C7 C11 0.96 H12
+  keep ADP riding C12 1.2 H12
+  keep hydro triang C14 2 1 C15 C13 0.96 H14
+  keep ADP riding C14 1.2 H14
+  keep hydro triang C15 2 1 C14 C16 0.96 H15
+  keep ADP riding C15 1.2 H15
+  keep hydro triang C16 2 1 C17 C15 0.96 H16
+  keep ADP riding C16 1.2 H16
+  keep hydro triang C17 2 1 C16 C18 0.96 H17
+  keep ADP riding C17 1.2 H17
+  keep hydro triang C18 2 1 C13 C17 0.96 H18
+  keep ADP riding C18 1.2 H18
+  keep hydro triang C20 2 1 C19 C21 0.96 H20
+  keep ADP riding C20 1.2 H20
+  keep hydro triang C21 2 1 C22 C20 0.96 H21
+  keep ADP riding C21 1.2 H21
+  keep hydro triang C22 2 1 C21 C23 0.96 H22
+  keep ADP riding C22 1.2 H22
+  keep hydro triang C23 2 1 C24 C22 0.96 H23
+  keep ADP riding C23 1.2 H23
+  keep hydro triang C24 2 1 C19 C23 0.96 H24
+  keep ADP riding C24 1.2 H24
+  keep hydro triang C26 2 1 C25 C27 0.96 H26
+  keep ADP riding C26 1.2 H26
+  keep hydro triang C27 2 1 C28 C26 0.96 H27
+  keep ADP riding C27 1.2 H27
+  keep hydro triang C28 2 1 C29 C27 0.96 H28
+  keep ADP riding C28 1.2 H28
+  keep hydro triang C29 2 1 C28 C30 0.96 H29
+  keep ADP riding C29 1.2 H29
+  keep hydro triang C30 2 1 C25 C29 0.96 H30
+  keep ADP riding C30 1.2 H30
+  keep hydro triang C32 2 1 C31 C33 0.96 H32
+  keep ADP riding C32 1.2 H32
+  keep hydro triang C33 2 1 C34 C32 0.96 H33
+  keep ADP riding C33 1.2 H33
+  keep hydro triang C34 2 1 C35 C33 0.96 H34
+  keep ADP riding C34 1.2 H34
+  keep hydro triang C35 2 1 C34 C36 0.96 H35
+  keep ADP riding C35 1.2 H35
+  keep hydro triang C36 2 1 C31 C35 0.96 H36
+  keep ADP riding C36 1.2 H36
+  keep hydro triang C38 2 1 C37 C39 0.96 H38
+  keep ADP riding C38 1.2 H38
+  keep hydro triang C39 2 1 C40 C38 0.96 H39
+  keep ADP riding C39 1.2 H39
+  keep hydro triang C40 2 1 C41 C39 0.96 H40
+  keep ADP riding C40 1.2 H40
+  keep hydro triang C41 2 1 C40 C42 0.96 H41
+  keep ADP riding C41 1.2 H41
+  keep hydro triang C42 2 1 C37 C41 0.96 H42
+  keep ADP riding C42 1.2 H42
+  keep hydro triang C45 2 1 C46 C44 0.96 H45
+  keep ADP riding C45 1.2 H45
+  keep hydro triang C46 2 1 C45 C47 0.96 H46
+  keep ADP riding C46 1.2 H46
+  keep hydro triang C47 2 1 C48 C46 0.96 H47
+  keep ADP riding C47 1.2 H47
+  keep hydro triang C48 2 1 C47 C43 0.96 H48
+  keep ADP riding C48 1.2 H48
+end refine

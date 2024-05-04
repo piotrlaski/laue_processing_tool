@@ -1,0 +1,50 @@
+Version Jana2020
+title q1_21dlk1_0m_a.res in p2(1)/n
+cell 8.8807 15.1873 10.9202 90 106.098 90
+esdcell 0.0009 0.0015 0.0011 0 0.004 0
+spgroup P21/n 14 22
+lattice P
+symmetry x y z
+symmetry -x+1/2 y+1/2 -z+1/2
+symmetry -x -y -z
+symmetry x+1/2 -y+1/2 z+1/2
+unitsnumb 4
+atlist C15 H9 Br N O3 Rh
+formtab -9
+atom C atradius 0.77 color 128073041
+atom H atradius 0.46 color 255204204
+atom Br atradius 1.14 color 126049002
+atom N atradius 0.74 color 176185230
+atom O atradius 0.74 color 254003000
+atom Rh atradius 1.34 color 205209171
+roundmethod 1
+end
+*******************************************************************************
+refine
+  cycles 100 unstab 0.0167 siglevel 2 unstab2 2.3614
+  fixed all *
+  keep hydro triang C9 2 1 N1 C8 0.96 H9
+  keep ADP riding C9 1.2 H9
+  keep hydro triang C4 2 1 C5 C3 0.96 H4
+  keep ADP riding C4 1.2 H4
+  keep hydro triang C15 2 1 C14 C10 0.96 H15
+  keep ADP riding C15 1.2 H15
+  keep hydro triang C14 2 1 C13 C15 0.96 H14
+  keep ADP riding C14 1.2 H14
+  keep hydro triang C11 2 1 C12 C10 0.96 H11
+  keep ADP riding C11 1.2 H11
+  keep hydro triang C7 2 1 C6 C8 0.96 H7
+  keep ADP riding C7 1.2 H7
+  keep hydro triang C12 2 1 C13 C11 0.96 H12
+  keep ADP riding C12 1.2 H12
+  keep hydro triang C5 2 1 C4 C6 0.96 H5
+  keep ADP riding C5 1.2 H5
+  keep hydro triang C6 2 1 C7 C5 0.96 H6
+  keep ADP riding C6 1.2 H6
+end refine
+fourier
+end fourier
+dist
+end dist
+contour
+end contour

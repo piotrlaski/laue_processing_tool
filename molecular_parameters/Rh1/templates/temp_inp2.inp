@@ -1,0 +1,12 @@
+K:\Temp\mopro_12.par
+CONT
+I
+M
+    0.020
+   -0.200
+    0.200
+PLOT
+grid
+plot2.ps
+N
+EXIT

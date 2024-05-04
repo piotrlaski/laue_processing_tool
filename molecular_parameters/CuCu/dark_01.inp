@@ -1,0 +1,165 @@
+/* 
+ *
+ * XTAL CONFIG FILE
+ *
+ */
+
+input_data = 
+{
+	/* Path to the directory with images */
+	images_directory = "/PATH_INPUT/";
+
+	/* Path to the log file */
+	log_file_path = "/PATH_LOG";
+
+// --->
+// ---> This needs to be implemented, but maybe change it to the integration part. We export whole data set
+// ---> but reject images during the integration and subsequent step.
+// --->
+
+	/* Images to be skipped */
+	images_to_skip = ""; // NOT USED (yet)
+
+	/* Data source: APS, ESRF, SFRM */
+	data_source = "APS";
+};
+
+output_data = 
+{
+	/* Directory for temporary and output data */
+	output_directory = "/PATH_OUTPUT/";
+	
+	/* Name of output / input HDF5 file with images and log dataset */
+	images_dataset_name = "NAME_LOOK__frm.h5";
+	
+	/* Name of output / input HDF5 file with signal dataset */
+	signal_dataset_name	= "NAME_LOOK__sig.h5";
+
+	/* Name of output / input HDF5 file with integrated dataset */
+	integrated_dataset_name	= "NAME_LOOK__int.h5";
+
+//
+// This to be added
+//
+    /* Name of output / input HDF5 file with geometry dataset */
+//    geometry_dataset_name = "NAME_LOOK__geo.h5";
+
+	/* Name of output LaueUtil "expt" HDF5 dump file */
+	lu_dataset_name	= "NAME_LOOK__expt.h5";
+};
+
+integration = 
+{
+
+// --->
+// ---> Change to "signal_finding_method"
+// --->
+
+	/* Method: SS = seed-skewness method, KW - Kruskal-Wallis test, CF - constant-fraction method */
+	integration_method = "SS";
+
+	/* Seed-skewness method parameters */
+	
+		/* Parameter used for the initial test of peak presence: |mu_3| > trust_level * std(mu_3), [double] */
+		trust_level = 0.2;
+
+		/* Parameter used for signal detection:	data[i] > ( <BG> + signal_level * std(BG) ), [double], <BG> = median */ 
+		signal_level = 3.0;
+
+	/* Kruskal-Wallis test parameters */
+	
+		/* Statistical significance level */
+		alpha = 0.05;
+
+		/* Cuf-off level for peak definition */
+		cutoff_level = 3.0;
+
+// --->
+// ---> This below to be added only for KW test
+// --->
+
+		/* Block length */
+		kw_block_length = 20;
+		
+
+	/* Image rejected area [pix: unsigned integer], if empty then use (); only; {} must be separated by commas */
+    rejected_rectangles	= ( { x_0 = 2384; y_0 = 2140; x_end = 2882; y_end = 2280; }, { x_0 = 2850; y_0 = 582; x_end = 3358; y_end = 725; }, { x_0 = 1900; y_0 = 220; x_end = 2400; y_end = 360; }, { x_0 = 1902; y_0 = 2860; x_end = 2414; y_end = 3839; });
+	rejected_general_rectangles = ();
+	rejected_discs		= ({ x_0 = 1989; y_0 = 1965; R = 380; });
+	rejected_discs_complement = ();
+	rejected_border		= 2;
+
+	/* Remove spots whitch are connected with rejected area or are partialy intersected with rejected area. [bool: TRUE/FALSE] */
+	remove_intersected = TRUE;
+
+	/* Minimal amount of pixels in spot [UNIT: pix, DATA TYPE: unsigned integer]*/
+	min_amount_of_pixels = 2;
+
+	/* Morphological operations (from left to right, only small characters) [string] */
+	// p - remove single Pixels
+	// e - Erosion
+	// d - Dilation
+	// h - remove 1-pixel Holes
+	morphological_operations = "peddh";
+		
+	/* Intensity weighted centers [bool: TRUE/FALSE] */
+	intensity_weighted_centers = TRUE;
+
+	/* Bitmask sum inside block [bool: TRUE/FALSE] */
+	sum_of_bitmasks = FALSE;
+
+// --->
+// ---> Remove from KW procedure (see above)
+// --->
+
+	/* Number of bitmask to add [DATA TYPE: unsigned integer]*/
+	amount_in_block = 20;
+
+// --->
+// ---> Add these new options
+// --->
+    
+	/* Primary beam normalisation */
+	primary_beam_normalisation = FALSE;
+	
+	/* Background correction and recomputation */
+	background_correction = FALSE;
+
+	/* Number of pixels used to print exact output data in the signal searching algorithm */
+	verbose_pixel_grid     = TRUE; // Only in the seed skewness method
+	verbose_pixel_size_n_x = 5; // n_x vertical
+	verbose_pixel_size_n_y = 5; // n_y horizontal
+	verbose_selected_pixel = ({ x = 1858; y = 456; });
+
+	/* Output bitmask's format: PNG or BMP [string] */
+	save_bitmasks_as = "PNG"
+};
+
+geometry = 
+{
+	/* Distance form crystal to detector [UNIT: mm, DATA TYPE: double] */
+	detector_distance = 100.0;
+
+	/* Size of detectors pixel [UNIT: mm, DATA TYPE: double] */
+	pixel_size_x = 0.0886;
+	pixel_size_y = 0.0886;
+	
+	/* Position of beam center on detector [UNIT: pix, DATA TYPE: double] */
+	beam_center_x = 1989.0;  
+	beam_center_y = 1965.0;
+
+	/* Constant goniometer angles [UNIT: degrees, DATA TYPE: double] */
+	alpha_angle = 90.0;
+	beta_angle = 60.0;
+	omega_angle = 0.0;
+	kappa_angle = 0.0;
+};
+
+machine = 
+{
+	/* Maximum host RAM space for processing data [UNIT: MB, DATA TYPE: unsigned integer] */
+	max_host_memory 	= 512;
+
+	/* Maximum device RAM space for processing data [UNIT: MB, DATA TYPE: unsigned integer] */
+	max_device_memory 	= 1024; // NOT USED (yet)
+};

@@ -1,0 +1,104 @@
+! Exported from CIF file: C:/Processing/ESRF_Scripts/Scripts/SNP_220K/templates/SNP_220K.cif
+CELL 6.1792 11.8770 15.5496  90.00 90.00 90.00  1.00000
+
+SYMM 8 P 
+1 x,y,z
+2 x+1/2,-y+1/2,-z+1/2
+3 -x+1/2,y+1/2,-z+1/2
+4 -x,-y,z
+5 -x,-y,-z
+6 -x-1/2,y-1/2,z-1/2
+7 x-1/2,-y-1/2,z-1/2
+8 x,y,-z
+
+SCALE 1 1.000000 
+
+
+FMULT 0.00000
+
+UOVER  0.00000  0.00000  0.00000  0.00000  0.00000  0.00000   ANI 
+SOLVT     0.00000     0.00000
+DUMMY 0
+
+KAPPA 1
+   1.         1. 
+ATOMS 14
+
+ATOM 1 Fe1 CIF 1   0.499992 0.220154 0.500000   1.0000   1   Fe
+XY 2   3   MON   K1   V0   M0   Q0
+UISO 0.00000
+8.00000 0.000 
+! WARNING : Axis type is missing. Default XY used 
+! WARNING : Axis definition is missing. Default atom nb 1 used 
+! WARNING : Axis definition is missing. Default atom nb 2 used
+! WARNING : Multipolar expansion is missing.
+! WARNING : Missing value, Q0 assumed.
+! WARNING : Missing value for UANI/UISO.
+
+ATOM 2 Na1 CIF 1   0.500000 0.500000 0.754683   1.0000   1   Na
+XY 1   3   MON   K1   V0   M0   Q0
+UISO 0.00000
+1.00000 0.000 
+
+ATOM 3 Na2 CIF 1   1.000000 0.500000 0.622023   1.0000   1   Na
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+1.00000 0.000 
+
+ATOM 4 O2 CIF 1   1.173191 0.622688 0.731446   1.0000   1   O
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+6.00000 0.000 
+
+ATOM 5 O1 CIF 1   0.118662 0.094210 0.500000   1.0000   1   O
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+6.00000 0.000 
+
+ATOM 6 N4 CIF 1   0.276901 0.141998 0.500000   1.0000   1   N
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+5.00000 0.000 
+
+ATOM 7 N1 CIF 1   0.896592 0.376810 0.500000   1.0000   1   N
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+5.00000 0.000 
+
+ATOM 8 N2 CIF 1   0.332981 0.379778 0.641576   1.0000   1   N
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+5.00000 0.000 
+
+ATOM 9 N3 CIF 1   0.750361 0.095308 0.356526   1.0000   1   N
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+5.00000 0.000 
+
+ATOM 10 C1 CIF 1   0.748362 0.317939 0.500000   1.0000   1   C
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+4.00000 0.000 
+
+ATOM 11 C2 CIF 1   0.392701 0.320377 0.587974   1.0000   1   C
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+4.00000 0.000 
+
+ATOM 12 C3 CIF 1   0.655091 0.138797 0.411064   1.0000   1   C
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+4.00000 0.000 
+
+ATOM 13 H2a CIF 1   1.074444 0.626719 0.767314   1.0000   1   H
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+1.00000 0.000 
+
+ATOM 14 H2b CIF 1   1.183333 0.687516 0.715413   1.0000   1   H
+XY 1   2   MON   K1   V0   M0   Q0
+UISO 0.00000
+1.00000 0.000 
+
+
+STOP

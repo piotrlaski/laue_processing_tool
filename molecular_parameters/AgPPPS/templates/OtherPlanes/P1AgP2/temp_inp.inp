@@ -1,0 +1,28 @@
+C:/Users/piotr/Desktop/PhotodifferenceMaps/AgPPPS/355nm/rescale_glue_sortav_mopro/glued_sortaved/2018_10_04_rk_AgJDr012_100K_01.par
+FOUR
+C:/Users/piotr/Desktop/PhotodifferenceMaps/AgPPPS/355nm/rescale_glue_sortav_mopro/glued_sortaved/glued_sortaved.four
+FOUR
+Y
+S
+0 2
+T
+1.0 1.0
+S
+PL
+55501
+bXY
+P2 1
+55501
+P1 1
+55501
+P3 1
+55501
+-1 5
+-3.5 3
+1
+0
+0.05
+grid
+plot1.ps
+N
+END

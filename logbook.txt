@@ -1,0 +1,32 @@
+LOG:
+General:
+I have modified lu__view_matrix_parameters_nogui on the computer(UW 109A) to change scales
+lu_fcf2mono should work from the templates directory (changed some saving issues)
+
+PROCESSING.SH:
+1_02: redundant comments streamlined
+1_1: added b routine
+1_2: added u routine, added option to disable deleting _frm files after dumping to LU
+1_21,1_22: cosmetic + match_pairs now should function properly if it has been aborted mid-session
+1_23: n.d.
+1_24: changed placeholder intensity from 50000 to 70000, to be compatible with original LU__match_pairs_nogui script // no you have not ???  (as of v1.33)
+1_3: changed all laueutil procedures to be run directely from the templates directory
+1_31: adjusted nogui laueutil scripts to exit() instead of process kill
+1_32: create (c) routine will now overwrite previous input files, making substituting them easier
+1_33: improved laue matchpairs foolproofness, copying BOTH the real and broken templates of match_pairs_nogui.py at the start of m routine
+1_34: updated xtals -> laueproc
+
+QUEUE.SH:
+1_1: added xtals -b routine to be done after exporting (xtals -e)
+1_2: n.d.
+
+MERGER.SH:
+2.0: added appropriate auto-formating of sortav files
+2.02: code clearance changes
+
+DARK_01.INP:
+17.10.19 updated for APS
+18.01.21 updated to match xtals version
+
+LASER_01.INP
+18.01.21 updated to match xtals version(

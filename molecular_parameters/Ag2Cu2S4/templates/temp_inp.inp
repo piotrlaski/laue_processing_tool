@@ -1,0 +1,28 @@
+C:/Users/piotr/Desktop/PhotodifferenceMaps/Ag2Cu2PS4/355nm/rescale_glue_sortav_mopro/glued_sortaved/2019_04_08_rk_JDrR016AgCuSK2_100K_01_00.par
+FOUR
+C:/Users/piotr/Desktop/PhotodifferenceMaps/Ag2Cu2PS4/355nm/rescale_glue_sortav_mopro/glued_sortaved/glued_sortaved.four
+FOUR
+Y
+S
+0 2
+T
+1.0 1.0
+S
+PL
+55501 67602
+bXY
+Ag1 1
+55501
+Ag1 1
+67602
+Cu1 1
+55501
+-1.5 3.5
+-5 3
+1
+0
+0.05
+grid
+plot1.ps
+N
+END
