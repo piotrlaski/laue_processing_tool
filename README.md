@@ -71,25 +71,19 @@ https://doi.org/10.1107/S1600577520000077
 
 The script processes data through various stages:
 
-1. **Data Export** - Extracts diffraction patterns from raw data
-2. **Signal Processing** - Applies filters and corrections
-3. **Integration** - Calculates reflection intensities
-4. **Pair Matching** - Matches laser-on/laser-off reflection pairs for ratio calculation
-5. **Ratio Analysis** - Generates intensity ratios for temperature analysis
+1. **Data Import** - Extracts diffraction data from .mccd images into hdf5 file format
+2. **Signal Processing and Integration** - Identifies reflection spots using the seed-skewness algorithm and integrates spot intensities
+3. **Orientation Matrix Search** - Finds correct crystal orientation by matching relative positions of reflection clusters (k-means clustering) with model XRD data
+4. **Indexing** - Assigns Miller hkl indices to the collected reflections
+5. **ON/OFF Ratios Export** - Exports the ON/OFF ratio files for each dataset in CSV file format for furter processing (PD Maps using TRL_Mapper and/or LASER refinement using TRL_Refinement)
 
 Results are organized in structured output directories with processed data ready for further analysis.
 
 ## File Structure
 
 - `processing.sh` - Main processing script
-- `merger2_02.sh` - Script for merging reflection data from multiple measurements
-- `templates/` - Template files for various processing steps
+- `merger2_02.sh` - Script for merging reflection data from multiple measurements for SORTAV merging (see **sortav** note above)
+- `templates/` - Template files for various processing steps, contains various examples for previous samples
 
-## Advanced Features
 
-- **Automatic pair matching** with adjustable intensity thresholds for dark measurements
-- **Batch processing** for multiple datasets
-- **Integration with crystallographic refinement tools**
-- **Automated quality control** and data validation
-
-For any additional help or bug reports, please contact your research group or submit an issue to the repository.
+For any additional help or bug reports, please contact pa.laski@uw.edu.pl or submit an issue to the repository.
