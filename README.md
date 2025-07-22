@@ -2,6 +2,8 @@
 
 An automated shell script for processing time-resolved X-ray diffraction data from pump-probe experiments, handling the complete workflow from raw data export to reflection intensity analysis.
 
+It is the public version of the project "TRL_Processing", which is referenced in my thesis (chapter 2.4.2.1 - p.52 - 55)
+
 ## Getting Started
 
 Clone the repository into your local space and ensure you have the required dependencies installed. Configure the paths and compound settings in the script header, then run `processing.sh` with the appropriate processing option.
